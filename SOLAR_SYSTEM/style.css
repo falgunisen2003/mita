@@ -1,0 +1,92 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: black;
+}
+
+
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+
+.sun {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    background-color: yellow;
+    box-shadow: 0 0 5em rgba(255, 255, 255, 0.8);
+}
+.earth {
+    position: absolute;
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 36.5s linear infinite;
+    transform-origin: 15em 15em; 
+}
+
+.earth::before {
+    content: "";
+    position: absolute;
+     top: 2.6em;
+    right: 2.6em; 
+     height: 3.1em;
+    width: 3.1em;
+    background-color: aqua;
+    border-radius: 50%;
+    box-shadow: 0 0 1.5em rgba(0, 255, 255, 0.7);
+}
+
+
+.moon {
+    position: absolute;
+    top: 1em; 
+    right: 1em;
+    width: 8em;
+    height: 8em;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    animation: orbit 2.7s linear infinite;
+    transform-origin: 4em 4em;  
+
+}
+.moon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1.8em;
+    width: 1.8em;
+    background-color: silver;
+    border-radius: 50%;
+    box-shadow: 0 0 1em rgba(192, 192, 192, 0.5);
+}
+
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
